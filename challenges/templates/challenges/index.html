@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/challenge.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/index.css'%}" type="text/css">
+    <title>All challenges</title>
+</head>
+<body>
+    <h1>Monthly challenges</h1>
+    <ul>
+        {% for month in months %}
+            <li><a href="{% url 'month_challenge' month=month %}">{{ month|title}}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

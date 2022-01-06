@@ -9,28 +9,27 @@ from django.urls import reverse
 monthly_challenges = {
     "january": "this is jan",
     "february": "this is feb",
-    "march": "this is march",
+    "march": "Try something cool this month niga!",
     "april": "this is april",
+    "may": "Make yourself in may yo!",
+    "june": None
 }
 
 def index(request):
-    list_item = ""
     months = list(monthly_challenges.keys())
-    
-    for month in months:
-        capitalized_month = month.capitalize()
-        month_path = reverse("month_challenge", args=[month])
-        list_item += f"<li><a href='{month_path}'>{capitalized_month}</a></li>"
-    
-    response_data = f"<ul>{list_item}</ul>"
-    return HttpResponse(response_data)
-
+    return render(request, "challenges/index.html", {           # определяет, что рендерить - темплейт index.html в подпапке challenges этого приложения (app)
+        "months": months
+    })         
 
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        string = f"here is {month} with challenge: {challenge_text}"
-        return HttpResponse(string)
+        indexlink = ""
+        return render(request, "challenges/challenge.html", {
+            "text": challenge_text,
+            "month": month,
+            "indexlink": indexlink
+        })
     except:
         return HttpResponseNotFound("month not found")
 

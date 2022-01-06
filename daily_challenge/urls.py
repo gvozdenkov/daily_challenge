@@ -19,5 +19,5 @@ from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('challenge/', include("challenges.urls"))          #include(<app name>.urls) Т.е. отслеживать все url localhost:8000/challenges/
+    path('challenges/', include("challenges.urls"))          #include(<app name>.urls) Т.е. отслеживать все url localhost:8000/challenges/
 ]

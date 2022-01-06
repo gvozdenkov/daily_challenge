@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/challenge.css'%}" type="text/css">
+    <title>{{ month|title }} challenge</title>
+</head>
+<body>
+    <h1>{{ month|title }} challenge</h1>
+    
+    {% if text is not None %}
+        <p id="today-challenge">{{ text }}</p>
+    {% else %}
+        <p id="today-challenge">Sorry, no challenge this month</p>
+    {% endif %}
+
+    <p>Back to year list challenge
+        <a href="{% url 'index' %}">here</a>
+    </p>
+</body>
+</html>
