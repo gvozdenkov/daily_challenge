@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+    background-color: rgb(24, 24, 24);
+}
+
+h1{
+    font-family: sans-serif;
+    color: #47834a;
+}
+
+p {
+    font-family: monospace;
+    color: #4b4b4b;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#today-challenge {
+    font-weight: bold;
+    font-size: 60px;
+    color: rgb(230, 230, 230);
+}

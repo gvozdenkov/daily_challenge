@@ -1,18 +1,21 @@
+{% extends 'base.html' %}       <!-- на основе шаблона base.html создаётся страница -->
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/challenge.css'%}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/index.css'%}" type="text/css">
-    <title>All challenges</title>
-</head>
-<body>
-    <h1>Monthly challenges</h1>
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'challenges\index.css' %} ">        <!-- static папку следит джанго, вложеные указать в пути -->
+    <link rel="stylesheet" href="{% static '\includes\header.css' %} ">
+{% endblock css_files %}
+
+{% block page_title %}
+    Monthly challenges
+{% endblock page_title %}
+
+{% block content %}
+    {% include 'challenges\includes\header.html' %}
+    
     <ul>
         {% for month in months %}
             <li><a href="{% url 'month_challenge' month=month %}">{{ month|title}}</a></li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock content %}

@@ -1,22 +1,27 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/challenge.css'%}" type="text/css">
-    <title>{{ month|title }} challenge</title>
-</head>
-<body>
-    <h1>{{ month|title }} challenge</h1>
-    
-    {% if text is not None %}
-        <p id="today-challenge">{{ text }}</p>
-    {% else %}
-        <p id="today-challenge">Sorry, no challenge this month</p>
-    {% endif %}
 
-    <p>Back to year list challenge
-        <a href="{% url 'index' %}">here</a>
-    </p>
-</body>
-</html>
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'challenges\challenge.css' %} ">        <!-- static папку следит джанго, вложеные указать в пути -->
+    <link rel="stylesheet" href="{% static '\includes\header.css' %} ">
+{% endblock css_files %}
+
+{% block page_title %}
+    {{ month|title }} challenge
+{% endblock page_title %}
+
+{% block content %}
+    {% include 'challenges\includes\header.html' %}
+
+    <h1>{{ month|title }} challenge</h1>
+    {% if text is not None %}
+            <p id="today-challenge">{{ text }}</p>
+        {% else %}
+            <p id="today-challenge">Sorry, no challenge this month</p>
+        {% endif %}
+
+        <p>Back to year list challenge
+            <a href="{% url 'index' %}">here</a>
+        </p>
+{% endblock content %}
+    

@@ -1,0 +1,24 @@
+p {
+    font-family: monospace;
+    color: #4b4b4b;
+}
+
+/* a {
+    color: green;
+    text-decoration: none;
+} */
+
+/* a:hover {
+    text-decoration: underline;
+} */
+
+#today-challenge {
+    font-weight: bold;
+    font-size: 60px;
+    color: rgb(230, 230, 230);
+    /* margin: 1rem 0 0 0; */
+}
+
+h1 {
+    margin: 2rem 0 0 0;
+}
