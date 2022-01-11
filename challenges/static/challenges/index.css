@@ -3,14 +3,14 @@ ul {
     margin: 2rem auto;
     width: 90%;
     max-width: 20rem;
-    box-shadow: 0 0 25px rgb(22, 22, 22);
+    background-color: rgb(28, 28, 28);
     padding: 1rem;
     border-radius: 8px;
+    box-shadow: 0 0 25px rgb(22, 22, 22);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 22rem;
-    background-color: rgb(28, 28, 28);
 
 }
 
